@@ -7,7 +7,7 @@ using Example;
 
 namespace Client
 {
-    public class Client
+    class Client
     {
         public static void Main(string[] sa)
         {
@@ -15,12 +15,13 @@ namespace Client
             {
                 Ice.Communicator communicator = Ice.Util.initialize();
                 ConverterPrx cvt = ConverterPrxHelper.checkedCast(
-                    communicator.stringToProxy("converter:tcp -p 10000 -h localhost")
+                  communicator.stringToProxy(" converter:tcp -p 10000 -h local host")
                 );
-                string upper = cvt.toUpper("Hello World");
-                System.Console.WriteLine("Server Returned:" + upper);
-                while (true) ;
-                communicator.destroy();
+                string upper = cvt.toUpper("hello world");
+                System.Console.WriteLine("Server returned: " + upper);
+                while (true) ; // Holds window to show output
+
+         
             }
             catch (System.Exception ex)
             {

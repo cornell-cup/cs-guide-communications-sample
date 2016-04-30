@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Example;
 
 namespace Server
 {
     class Server
     {
-        static void Main(String[] sa)
+        static void Main(string[] sa)
         {
             try
             {
@@ -25,7 +26,6 @@ namespace Server
             {
                 System.Console.Error.WriteLine(ex);
                 System.Environment.Exit(1);
-
             }
         }
     }
